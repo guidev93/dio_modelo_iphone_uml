@@ -40,16 +40,16 @@ public class Main {
 					case 1: {
 
 						while (!exitApp) {
-							
+
 							System.out.println("Selecione uma função no aplicativo: ");
 							System.out.println("1) Tocar/Parar música");
 							System.out.println("2) Mudar de música");
 							System.out.println("3) Sair");
-							
+
 							if (function.hasNextInt()) {
 
 								functionSelect = function.nextInt();
-								if (aplicationSelect >= 4) {
+								if (functionSelect >= 4) {
 									System.out.println("A aplicação não está disponível.");
 								} else {
 
@@ -59,7 +59,7 @@ public class Main {
 										break;
 									}
 									case 2: {
-										System.out.print("Digite a muúsica:");
+										System.out.print("Digite a música:");
 										function = new Scanner(System.in);
 										informationFunction = function.nextLine();
 										smartphone.selectMusic(informationFunction);
@@ -85,16 +85,108 @@ public class Main {
 					}
 					case 2: {
 
-						System.out.println("Selecione uma função no aplicativo: ");
-						System.out.println("1) Tocar/Parar música");
-						System.out.println("2) Mudar de música");
+						while (!exitApp) {
+
+							System.out.println("Selecione uma função no aplicativo: ");
+							System.out.println("1) Ligar para um número");
+							System.out.println("2) Atender ligação");
+							System.out.println("3) Voicemail");
+							System.out.println("4) Sair");
+
+							if (function.hasNextInt()) {
+
+								functionSelect = function.nextInt();
+								if (functionSelect >= 5) {
+									System.out.println("A aplicação não está disponível.");
+								} else {
+
+									switch (functionSelect) {
+									case 1: {
+										System.out.print("Digite o número:");
+										function = new Scanner(System.in);
+										informationFunction = function.nextLine();
+										smartphone.call(informationFunction);
+										break;
+									}
+									case 2: {
+										smartphone.takeCall();
+										break;
+
+									}
+									case 3: {
+										smartphone.voicemail();
+										break;
+
+									}
+									case 4: {
+										System.out.println("Saindo da aplicação");
+										exitApp = true;
+										break;
+
+									}
+									}
+
+								}
+
+							} else {
+								System.out.println("O valor digitado é incorreto.");
+							}
+
+						}
+						break;
 
 					}
 					case 3: {
 
-						System.out.println("Selecione uma função no aplicativo: ");
-						System.out.println("1) Ligar");
-						System.out.println("2) Mudar de música");
+						while (!exitApp) {
+
+							System.out.println("Selecione uma função no aplicativo: ");
+							System.out.println("1) Exibir Página");
+							System.out.println("2) Adicionar Aba");
+							System.out.println("3) Atualizar Página");
+							System.out.println("4) Sair");
+
+							if (function.hasNextInt()) {
+
+								functionSelect = function.nextInt();
+								if (functionSelect >= 5) {
+									System.out.println("A aplicação não está disponível.");
+								} else {
+
+									switch (functionSelect) {
+									case 1: {
+										System.out.print("Digite o site:");
+										function = new Scanner(System.in);
+										informationFunction = function.nextLine();
+										smartphone.page(informationFunction);
+										break;
+									}
+									case 2: {
+										smartphone.newTab();
+										break;
+
+									}
+									case 3: {
+										smartphone.refreshPage();
+										break;
+
+									}
+									case 4: {
+										System.out.println("Saindo da aplicação");
+										exitApp = true;
+										break;
+
+									}
+									}
+
+								}
+
+							} else {
+								System.out.println("O valor digitado é incorreto.");
+							}
+
+						}
+						break;
 
 					}
 					case 4: {
