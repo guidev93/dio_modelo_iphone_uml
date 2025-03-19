@@ -2,48 +2,42 @@ package edu.modelIphoneUml.iphone;
 
 import edu.modelIphoneUml.functionalityIphone.musicPlayer;
 
-public class iphone implements musicPlayer{
+public class iphone implements musicPlayer {
 
 	String music;
-	boolean isPlay = false; 
+	boolean isPlay = false;
 
-	
 	@Override
 	public void play() {
-		if(this.music.isEmpty()) {
+		if (this.music == null || this.music.isEmpty()) {
 			System.out.println("Nenhuma música foi selecionada!");
-		}
-		
-		if(this.isPlay) 
-		{
+		} else if (this.isPlay){
 			this.stop();
 		} else {
-		System.out.println("A música foi iniciada!");
-		this.isPlay = true;
+			System.out.println("A música foi iniciada!");
+			this.isPlay = true;
 		}
 	}
 
 	@Override
 	public void stop() {
-		if(this.music.isEmpty()) {
+		if (this.music.isEmpty()) {
 			System.out.println("Nenhuma música foi selecionada!");
 		}
-		
-		if(!this.isPlay) {
+
+		if (!this.isPlay) {
 			this.play();
-		} else { 
-		System.out.println("A  música foi parada!");
-		this.isPlay = false;
+		} else {
+			System.out.println("A  música foi parada!");
+			this.isPlay = false;
 		}
-		
+
 	}
 
 	@Override
 	public void selectMusic(String nameMusic) {
 		this.music = nameMusic;
-		System.out.println("Música "+nameMusic+ " selecionada!");		
+		System.out.println("Música " + nameMusic + " selecionada!");
 	}
-	
-	
 
 }
