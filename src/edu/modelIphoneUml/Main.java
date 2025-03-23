@@ -22,7 +22,7 @@ public class Main {
 			System.out.println("Selecione um aplicativo: ");
 			System.out.println("1) Música");
 			System.out.println("2) Telefone");
-			System.out.println("3) Celular");
+			System.out.println("3) Internet");
 			System.out.println("4) Desligar");
 
 			System.out.println("Digite o aplicativo:");
